@@ -10,9 +10,9 @@ class Tags(BaseModel):
 
 class PET(BaseModel):
     id: int
-    category: list[Category]
+    category: Category
     name: str
-    PhotoUrls: list
+    PhotoUrls: list[str]
     Tags: list[Tags]
     status: str
 
