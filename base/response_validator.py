@@ -20,10 +20,15 @@ class Response:
                 schema.parse_obj(item)
                 print(item)
         else:
+            print(self)
             schema.parse_obj(self.json)
-            print(self.json)
         return self
 
     def assert_status_code(self, status_code):
         assert self.status == status_code, "Invalid status_code = " + str(self.status)
         return self
+
+    def __str__(self):
+        return (
+            f"Response\nstatus code = {self.status}\njson: {self.json}"
+        )

@@ -11,7 +11,7 @@ def test_return_pet():
 
     #Arrange
     pet_id = "2"
-    url = BASE_URL + "v2/pet/" + pet_id
+    url = f"{BASE_URL}v2/pet/{pet_id}"
 
     #Act
     r = requests.get(url=url)

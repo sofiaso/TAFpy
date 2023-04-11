@@ -9,11 +9,11 @@ class Tags(BaseModel):
     name: str
 
 class PET(BaseModel):
-    id: int
-    category: list[Category]
+    id: int = Field(le=2)
+    category: Category
     name: str
-    PhotoUrls: list
-    Tags: list[Tags]
+    photoUrls: list[str]
+    tags: list[Tags]
     status: str
 
     #@validator("id")
