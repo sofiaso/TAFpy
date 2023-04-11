@@ -21,9 +21,7 @@ class Response:
                 print(item)
         else:
             print(self)
-            try:
-                schema.parse_obj(self.json)
-            
+            schema.parse_obj(self.json)
         return self
 
     def assert_status_code(self, status_code):
