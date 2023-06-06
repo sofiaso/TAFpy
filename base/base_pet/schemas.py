@@ -9,7 +9,7 @@ class Tags(BaseModel):
     name: str
 
 class PET(BaseModel):
-    id: int = Field(le=2)
+    id: int = Field(le=10)
     category: Category
     name: str
     photoUrls: list[str]

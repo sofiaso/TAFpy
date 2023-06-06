@@ -1,16 +1,18 @@
+import pytest
 import requests
 from base.configuration import BASE_URL
-from base.response_validator import Response
-from base.schemas import PET
+from base.base_pet.response_validator import Response
+from base.base_pet.schemas import PET
 
-def test_return_pet():
+@pytest.mark.API
+def test_return_pet(say_hello):
     '''
     Test if api returns a single pet
     :return: json pet
     '''
 
     #Arrange
-    pet_id = "2"
+    pet_id = 2
     url = f"{BASE_URL}v2/pet/{pet_id}"
 
     #Act
@@ -19,3 +21,7 @@ def test_return_pet():
 
     #Assert
     response.assert_status_code(200).validation_pydantic(PET)
+
+def test_try_method_in_method(calculate, make_number):
+    print(make_number)
+    assert True

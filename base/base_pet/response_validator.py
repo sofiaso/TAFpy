@@ -25,7 +25,7 @@ class Response:
         return self
 
     def assert_status_code(self, status_code):
-        assert self.status == status_code, "Invalid status_code = " + str(self.status)
+        assert self.status == status_code, f"Invalid status_code = {self.status}"
         return self
 
     def __str__(self):
