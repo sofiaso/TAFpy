@@ -25,3 +25,7 @@ def test_return_pet(say_hello):
 def test_try_method_in_method(calculate, make_number):
     print(make_number)
     assert True
+
+@pytest.mark.API
+def test_put_pet(pet_generator):
+    print(pet_generator.get())

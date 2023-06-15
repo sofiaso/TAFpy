@@ -1,9 +1,10 @@
 
 
-class Order():
+class Order:
+    result = {}
+
     def __int__(self):
         self.result = {}
-        self.build()
 
     def set_id(self, id=0):
         self.result['id'] = id
@@ -30,13 +31,13 @@ class Order():
         return self
 
     def get(self):
-        return self.result
-
-    def build(self):
         self.set_id()
         self.set_pet_id()
         self.set_quantity()
         self.set_shipDate()
         self.set_status()
         self.set_complete()
+        return self.result
+
+    def build(self):
         return self.result

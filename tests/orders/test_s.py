@@ -15,3 +15,9 @@ def test_get_order():
 
     #Assert
     response.validation_by_status(200).validation_by_json_pydantic()
+
+
+@pytest.mark.API
+def test_put_order(order_generator):
+    #Arrange
+    print(order_generator.get())

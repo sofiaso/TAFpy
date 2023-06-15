@@ -1,4 +1,5 @@
 import pytest
+from base.generators.pet import Pet
 
 @pytest.fixture
 def say_hello():
@@ -16,3 +17,7 @@ def make_number():
     print("set up running")
     yield 14
     print("tear down running")
+
+@pytest.fixture()
+def pet_generator():
+    return Pet()
