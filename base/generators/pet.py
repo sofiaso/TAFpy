@@ -3,8 +3,6 @@ from faker import Faker
 class Category:
     result = {}
     fake = Faker()
-    def __int__(self):
-        pass
 
     def set_id(self, id=0):
         self.result["id"] = id
@@ -31,8 +29,6 @@ class Category:
 class Tag:
     result = {}
     fake = Faker()
-    def __int__(self, lang):
-        pass
 
     def set_id(self, id=0):
         self.result["id"] = id
@@ -59,8 +55,6 @@ class Tag:
 class Pet:
     result = {}
     fake = Faker()
-    def __int__(self):
-        pass
 
     def set_id(self, id=0):
         self.result['id'] = id
