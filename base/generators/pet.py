@@ -1,8 +1,12 @@
 from faker import Faker
 
 class Category:
-    result = {}
-    fake = Faker()
+    result = None
+    fake = None
+
+    def __int__(self):
+        self.result = {}
+        self.fake = Faker()
 
     def set_id(self, id=0):
         self.result["id"] = id
@@ -27,8 +31,12 @@ class Category:
 
 
 class Tag:
-    result = {}
-    fake = Faker()
+    result = None
+    fake = None
+
+    def __int__(self):
+        self.result = {}
+        self.fake = Faker()
 
     def set_id(self, id=0):
         self.result["id"] = id
@@ -53,8 +61,12 @@ class Tag:
 
 
 class Pet:
-    result = {}
-    fake = Faker()
+    result = None
+    fake = None
+
+    def __int__(self):
+        self.result = {}
+        self.fake = Faker()
 
     def set_id(self, id=0):
         self.result['id'] = id

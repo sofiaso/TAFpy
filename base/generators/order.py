@@ -1,7 +1,10 @@
 
 
 class Order:
-    result = {}
+    result = None
+
+    def __int__(self):
+        self.result = {}
 
     def set_id(self, id=0):
         self.result['id'] = id
@@ -28,7 +31,8 @@ class Order:
         return self
 
     def get(self):
-        self.set_id().set_pet_id().\
+        self.set_id().\
+            set_pet_id().\
             set_quantity().\
             set_shipDate().\
             set_status().\
