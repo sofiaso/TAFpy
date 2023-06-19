@@ -38,3 +38,11 @@ class Order:
 
     def build(self):
         return self.result
+
+    def update(self, key, value):
+        '''
+        update information on every layer
+        :return: self
+        '''
+        self.result[key] = value
+        return self
