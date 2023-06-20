@@ -18,7 +18,6 @@ class Response:
         if isinstance(self.json, list):
             for item in self.json:
                 schema.parse_obj(item)
-                print(item)
         else:
             print(self)
             schema.parse_obj(self.json)
@@ -32,3 +31,12 @@ class Response:
         return (
             f"Response\nstatus code = {self.status}\njson: {self.json}"
         )
+
+    def get_object(self, schema):
+        if isinstance(self.json, list):
+            l = []
+            for item in self.json:
+                l.append(schema.parse_obj(item))
+            return l
+        else:
+            return schema.parse_obj(self.json)
