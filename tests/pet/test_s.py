@@ -3,6 +3,7 @@ import requests
 from base.configuration import BASE_URL
 from base.base_pet.response_validator import Response
 from base.base_pet.schemas import PET
+from base.base_pet.enums import Pet_fields
 
 @pytest.mark.API
 def test_return_pet(say_hello):
@@ -33,13 +34,7 @@ def test_put_pet(pet_generator):
     print(pet_generator.get())
 
 
-@pytest.mark.parametrize("key", [
-    "id",
-    "category",
-    "name",
-    "tags",
-    "status"
-])
+@pytest.mark.parametrize("key", [*Pet_fields.list()])
 def test_delete_field(pet_generator, key):
     '''
     test which field is required
